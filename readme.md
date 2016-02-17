@@ -1,7 +1,7 @@
 # Angular Barcode
 
 The most complete angular barcode generator out there. 
-Provides a simple wrapper directive for the awesome [bw-ip](https://github.com/metafloor/bwip-js) library.
+Provides a simple wrapper directive for the awesome [bwip-js](https://github.com/metafloor/bwip-js) library.
 
 ## Requirements
 
@@ -14,12 +14,18 @@ Provides a simple wrapper directive for the awesome [bw-ip](https://github.com/m
         
 ## Demo
 
-For a quick demo simply download the bower package and start a http-server in the example directory.
+Check the provided [example](http://tinydesk.at/angular-barcode/example/example.html).
+
+To test the example locally, simply download the bower package and start a http-server in the example directory.
 A simple http server may be installed as a node module.
 
     $ npm install http-server -g
     
 ## Usage
+
+## bwip-js
+
+For more info check [bwip-js](https://github.com/metafloor/bwip-js).
     
 ## Alternatives
 
@@ -56,7 +62,8 @@ If you have to support only a few types or just a certain type of barcode there 
 * COOP 2 of 5 
 * Custom 1D symbology 
 * Custom 4 state symbology 
-* Data Matrix * Datalogic 2 of 5 
+* Data Matrix 
+* Datalogic 2 of 5 
 * Deutsche Post Identcode 
 * Deutsche Post Leitcode 
 * EAN-13 
