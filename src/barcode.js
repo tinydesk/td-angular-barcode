@@ -79,7 +79,7 @@
 
                     bw.scale(scope.config.scale.x, scope.config.scale.y);
 
-                    bw.call(scope.config.value, function(err) {
+                    bw.call(scope.config.type, function(err) {
                         if (err) {
                             scope.error.msg = parseError(err);;
                             scope.error.show = true;

@@ -1,4 +1,4 @@
-tddBarcode : Angular barcode generator based on bwip-js
+Angular Barcode : Angular wrapper directive for bwip-js
 
 The MIT License
 
