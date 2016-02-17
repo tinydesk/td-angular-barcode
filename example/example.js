@@ -1,7 +1,19 @@
 (function () {
     'use strict';
 
-    var mod = angular.module('barcode.example', ['tdd.barcode']);
+    var mod = angular.module('barcode.example', [
+        'ui.bootstrap',
+        'tdd.barcode'
+    ]);
+
+    mod.controller('BarcodeExampleController', ['BarcodeTypes', function(BarcodeTypes) {
+        var vm = this;
+
+        vm.data = {
+            types : BarcodeTypes,
+            selection : BarcodeTypes[0]
+        };
+    }]);
 
     mod.value('BarcodeTypes', [
         { name : 'Aztec', value : 'azteccode', text : 'This is Aztec Code', altText : '', scale : { x : 2, y : 2 }, options : 'format=full'},
@@ -10,18 +22,4 @@
         { name : 'Code 128', value : 'code128', text : 'Count01234567^FNC2!', altText : '', scale : { x : 2, y : 2 }, options : 'includetext parsefnc'},
         { name : 'QR', value : 'qrcode', text : 'This is QR Code', altText : '', scale : { x : 2, y : 2 }, options : 'eclevel=M'}
     ]);
-
-    mod.controller('BarcodeTestController', ['$scope', 'BarcodeTypes', function($scope, BarcodeTypes) {
-        var vm = this;
-
-        vm.data = {
-            types : BarcodeTypes,
-            selection : {
-                barcode : _.first(BarcodeTypes)
-            },
-            barcodeOptions : null
-        };
-
-        $scope['BarcodeTestController'] = vm;
-    }]);
 })();

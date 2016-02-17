@@ -30,6 +30,7 @@
     "tests"
   ],
   "dependencies": {
-    "bwip-js": "https://github.com/metafloor/bwip-js.git#^0.14.2"
+    "bwip-js": "https://github.com/metafloor/bwip-js.git#^0.14.2",
+    "angular": "^1.2.18"
   }
 }

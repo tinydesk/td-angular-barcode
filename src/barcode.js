@@ -41,23 +41,24 @@
                     return result;
                 }
 
-                function handleError(err) {
+                function parseError(err) {
+                    var msg = null;
+
                     if (typeof err === 'string') {
-                        scope.error.msg = err;
+                        msg = err;
                     } else if (err.stack) {
-                        scope.error.msg = err.message + ' ' + err.stack;
+                        msg = err.message + ' ' + err.stack;
                     } else {
                         var s = '';
-                        if (err.fileName) {
-                            s += err.fileName + ' ';
-                        }
-                        if (err.lineNumber) {
+                        if (err.fileName) { s += err.fileName + ' '; }
+
+                        if (err.lineNumber) {
                             s += '[line ' + err.lineNumber + '] ';
-                            scope.error.msg = s + (s ? ': ' : '') + err.message;
+                            msg = s + (s ? ': ' : '') + err.message;
                         }
                     }
-                    scope.error.msg = err;
-                    scope.error.show = true;
+
+                    return msg;
                 }
 
                 scope.render = function() {
@@ -80,9 +81,11 @@
 
                     bw.call(scope.config.value, function(err) {
                         if (err) {
-                            handleError(err);
+                            scope.error.msg = parseError(err);;
+                            scope.error.show = true;
                         } else {
                             scope.error.show = false;
+                            scope.error.msg = null;
                             bw.bitmap().show(canvas[0], 'N');
                         }
                     });
