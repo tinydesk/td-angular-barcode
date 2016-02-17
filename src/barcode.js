@@ -70,8 +70,8 @@
 
                     var options = parseOptions(bw, scope.config.options);
 
-                    if (scope.config.altTxt !== undefined) {
-                        options.alttext = bw.value(scope.config.altTxt);
+                    if (scope.config.altText !== undefined) {
+                        options.alttext = bw.value(scope.config.altText);
                     }
 
                     bw.push(scope.config.text);

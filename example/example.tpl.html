@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <!-- Make sure that bootstrap is installed -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <title>Angular barcode example</title>
 
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
     <body ng-app="barcode.example">
 
@@ -45,17 +45,8 @@
             </div>
         </div>
 
-        <!-- Libs (Make sure that angular and angular-bootstrap is installed) -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-        <!-- Add bwip dependencies -->
-        <script src="bower_components/bwip-js/freetype.js"></script>
-        <script src="bower_components/bwip-js/bwip.js"></script>
-        <script src="bower_components/bwip-js/lib/canvas.js"></script>
-        <script src="bower_components/angular-barcode/src/barcode.js"></script>
-
-        <script src="example.js"></script>
 
         <!-- Load fonts: Needed for bwip -->
         <script type="text/javascript">
@@ -73,5 +64,14 @@
                 } ]
             };
         </script>
+
+        <!-- Add bwip dependencies -->
+        <script src="bower_components/bwip-js/freetype.js"></script>
+        <script src="bower_components/bwip-js/bwip.js"></script>
+        <script src="bower_components/bwip-js/lib/canvas.js"></script>
+
+        <script src="bower_components/angular-barcode/src/barcode.js"></script>
+
+        <script src="example.js"></script>
     </body>
 </html>
