@@ -20,9 +20,19 @@
                         <label>Alt Text</label>
                         <input type="text" class="form-control" ng-model="bCtrl.data.selection.altText" />
                     </div>
-                    <div class="form-group">
-                        <label>Options</label>
-                        <input type="text" class="form-control" ng-model="bCtrl.data.selection.options" />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Options</label>
+                                <input type="text" class="form-control" ng-model="bCtrl.data.selection.options" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Bg Color</label>
+                                <input type="color" class="form-control" value="#fff" ng-model="bCtrl.data.selection.bgColor" />
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-6">
@@ -36,6 +46,26 @@
                                 <label>Scale Y</label>
                                 <input type="number" class="form-control" min="1" ng-model="bCtrl.data.selection.scale.y" />
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Font Rendering</label>
+                                <select class="form-control" ng-model="bCtrl.data.selection.rendering">
+                                    <option value="0">Anti-Aliased</option>
+                                    <option value="1">Monochrome</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Image Rotation</label>
+                            <select class="form-control" ng-model="bCtrl.data.selection.rotation">
+                                <option value="N">Normal</option>
+                                <option value="R">90CW</option>
+                                <option value="L">90CCW</option>
+                                <option value="I">180</option>
+                            </select>
                         </div>
                     </div>
                 </form>

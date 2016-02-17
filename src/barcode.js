@@ -62,11 +62,17 @@
                 }
 
                 scope.render = function() {
-                    BWIPJS.ft_monochrome(0);
-
                     var bw = new BWIPJS();
 
-                    bw.bitmap(new Bitmap());
+                    var mono = scope.config.rendering === "1" ? 1 : 0;
+
+                    BWIPJS.ft_monochrome(mono);
+
+                    if (scope.config.bgColor) {
+                        bw.bitmap(new Bitmap(scope.config.bgColor));
+                    } else {
+                        bw.bitmap(new Bitmap());
+                    }
 
                     var options = parseOptions(bw, scope.config.options);
 
@@ -79,6 +85,8 @@
 
                     bw.scale(scope.config.scale.x, scope.config.scale.y);
 
+                    var rotation = scope.config.rotation !== undefined ? scope.config.rotation : 'N';
+
                     bw.call(scope.config.type, function(err) {
                         if (err) {
                             scope.error.msg = parseError(err);;
@@ -86,7 +94,7 @@
                         } else {
                             scope.error.show = false;
                             scope.error.msg = null;
-                            bw.bitmap().show(canvas[0], 'N');
+                            bw.bitmap().show(canvas[0], rotation);
                         }
                     });
                 };
