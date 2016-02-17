@@ -1,0 +1,36 @@
+<div class="row" ng-controller="BarcodeTestController">
+    <div class="col-sm-6">
+        <form>
+            <select class="form-control" ng-model="BarcodeTestController.data.selection.barcode" ng-options="type.name for type in BarcodeTestController.data.types"></select>
+            <div class="form-group">
+                <label>Text</label>
+                <input type="text" class="form-control" ng-model="BarcodeTestController.data.selection.barcode.text">
+            </div>
+            <div class="form-group">
+                <label>Alt Text</label>
+                <input type="text" class="form-control" ng-model="BarcodeTestController.data.selection.barcode.altText">
+            </div>
+            <div class="form-group">
+                <label>Options</label>
+                <input type="text" class="form-control" ng-model="BarcodeTestController.data.selection.barcode.options">
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Scale X</label>
+                        <input type="number" class="form-control" min="1" ng-model="BarcodeTestController.data.selection.barcode.scale.x">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Scale Y</label>
+                        <input type="number" class="form-control" min="1" ng-model="BarcodeTestController.data.selection.barcode.scale.y">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <tdd-barcode config="BarcodeTestController.data.selection.barcode"></tdd-barcode>
+    </div>
+</div>
