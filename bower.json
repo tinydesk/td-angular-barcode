@@ -1,5 +1,5 @@
 {
-  "name": "angular-barcode",
+  "name": "td-angular-barcode",
   "authors": ["Onur Dogangönül <onur@tinydesk.at>"],
   "description": "Angular 1 barcode gernator",
   "main": "dist/td-barcode.js",

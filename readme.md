@@ -14,7 +14,7 @@ Provides a simple wrapper directive for [bwip-js](https://github.com/metafloor/b
     
 or 
 
-    $ bower install angular-barcode-gen
+    $ bower install td-angular-barcode
         
 ## Demo
 
