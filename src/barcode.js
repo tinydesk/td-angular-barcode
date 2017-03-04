@@ -1,5 +1,4 @@
-angular.module('td.barcode', [])
-  .directive('tdBarcode', () => {
+angular.module('td.barcode', []).directive('tdBarcode', () => {
   return {
     restrict: 'E',
     scope: {config : '='},
@@ -17,16 +16,14 @@ angular.module('td.barcode', [])
 
         let result = {};
 
-        for (var i = 0; i < tmp.length; i++) {
-          if (!tmp[i]) {
-              continue;
-          }
-
-          const eq = tmp[i].indexOf('=');
-          if (eq == -1) {
-            result[tmp[i]] = bw.value(true);
-          } else {
-            result[tmp[i].substr(0, eq)] = bw.value(tmp[i].substr(eq+1));
+        for (let i = 0; i < tmp.length; i++) {
+          if (tmp[i]) {
+            const eq = tmp[i].indexOf('=');
+            if (eq == -1) {
+              result[tmp[i]] = bw.value(true);
+            } else {
+              result[tmp[i].substr(0, eq)] = bw.value(tmp[i].substr(eq+1));
+            }
           }
         }
 
@@ -41,7 +38,7 @@ angular.module('td.barcode', [])
         } else if (err.stack) {
           msg = err.message + ' ' + err.stack;
         } else {
-          var s = '';
+          let s = '';
           if (err.fileName) { s += err.fileName + ' '; }
 
           if (err.lineNumber) {
@@ -81,7 +78,7 @@ angular.module('td.barcode', [])
 
         bw.call(scope.config.type, function(err) {
           if (err) {
-            scope.error.msg = parseError(err);;
+            scope.error.msg = parseError(err);
             scope.error.show = true;
           } else {
             scope.error.show = false;

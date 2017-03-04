@@ -3,6 +3,7 @@
 const gulp =  require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const eslint = require('gulp-eslint');
 const rename = require('gulp-rename');
 const wrapCommonjs = require('gulp-wrap-commonjs');
 const wrapAmd = require('gulp-wrap-amd');
@@ -19,6 +20,12 @@ const isProd = () => argv.production;
 
 gulp.task('default', [], () => {
   
+});
+
+gulp.task('eslint', () => {
+  return gulp.src(srcFiles)
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 
 gulp.task('transpile', () => {
