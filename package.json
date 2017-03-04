@@ -1,0 +1,34 @@
+{
+  "name": "td-angular-barcode",
+  "version": "2.0.0",
+  "description": "Angular 1 barcode generator",
+  "main": "src/barcode.js",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "babel-preset-es2015": "^6.22.0",
+    "bower-sync": "^0.1.1",
+    "del": "^2.2.2",
+    "gulp-babel": "^6.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-wrap-amd": "^0.5.0",
+    "gulp-wrap-commonjs": "^0.1.14",
+    "gulp-wrap-umd": "^0.2.1"
+  },
+  "scripts": {
+    "publish-lib": "gulp clean && gulp publish"
+  },
+  "keywords": [
+    "Angular",
+    "Barcode",
+    "QR",
+    "Aztec",
+    "EAN"
+  ],
+  "author": "Onur Dogangönül <onur@tinydesk.at>",
+  "license": "MIT"
+}

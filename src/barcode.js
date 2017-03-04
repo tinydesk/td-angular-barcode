@@ -1,108 +1,99 @@
-(function () {
-    'use strict';
+angular.module('td.barcode', [])
+  .directive('tdBarcode', () => {
+  return {
+    restrict: 'E',
+    scope: {config : '='},
+    template: '<canvas ng-show="!error.show"></canvas><span ng-if="error.show">Barcode error: {{error.msg}}</span>',
+    link: (scope, elem) => {
+      const canvas = elem.children().eq(0);
+      
+      scope.error = {
+        show : false,
+        msg : null
+      };
 
-    var mod = angular.module('tdd.barcode', []);
+      function parseOptions(bw, options) {
+        const tmp = options.split(' ');
 
-    /**
-     * TODO Doc
-     */
-    mod.directive('tddBarcode', [function() {
-        return {
-            restrict : 'E',
-            scope : { config : '=' },
-            template : '<canvas ng-show="!error.show"></canvas><span ng-if="error.show">Barcode error: {{error.msg}}</span>',
-            link : function(scope, elem) {
+        let result = {};
 
-                scope.error = {
-                    show : false,
-                    msg : null
-                };
+        for (var i = 0; i < tmp.length; i++) {
+          if (!tmp[i]) {
+              continue;
+          }
 
-                var canvas = elem.children().eq(0);
+          const eq = tmp[i].indexOf('=');
+          if (eq == -1) {
+            result[tmp[i]] = bw.value(true);
+          } else {
+            result[tmp[i].substr(0, eq)] = bw.value(tmp[i].substr(eq+1));
+          }
+        }
 
-                function parseOptions(bw, options) {
-                    var tmp = options.split(' ');
+        return result;
+      }
 
-                    var result = {};
+      function parseError(err) {
+        let msg = null;
 
-                    for (var i = 0; i < tmp.length; i++) {
-                        if (!tmp[i]) {
-                            continue;
-                        }
+        if (typeof err === 'string') {
+          msg = err;
+        } else if (err.stack) {
+          msg = err.message + ' ' + err.stack;
+        } else {
+          var s = '';
+          if (err.fileName) { s += err.fileName + ' '; }
 
-                        var eq = tmp[i].indexOf('=');
-                        if (eq == -1) {
-                            result[tmp[i]] = bw.value(true);
-                        } else {
-                            result[tmp[i].substr(0, eq)] = bw.value(tmp[i].substr(eq+1));
-                        }
-                    }
+          if (err.lineNumber) {
+            s += '[line ' + err.lineNumber + '] ';
+            msg = s + (s ? ': ' : '') + err.message;
+          }
+        }
 
-                    return result;
-                }
+        return msg;
+      }
 
-                function parseError(err) {
-                    var msg = null;
+      scope.render = function() {
+        const bw = new BWIPJS();
 
-                    if (typeof err === 'string') {
-                        msg = err;
-                    } else if (err.stack) {
-                        msg = err.message + ' ' + err.stack;
-                    } else {
-                        var s = '';
-                        if (err.fileName) { s += err.fileName + ' '; }
+        const mono = scope.config.rendering === "1" ? 1 : 0;
 
-                        if (err.lineNumber) {
-                            s += '[line ' + err.lineNumber + '] ';
-                            msg = s + (s ? ': ' : '') + err.message;
-                        }
-                    }
+        BWIPJS.ft_monochrome(mono);
 
-                    return msg;
-                }
+        if (scope.config.bgColor) {
+          bw.bitmap(new Bitmap(scope.config.bgColor));
+        } else {
+          bw.bitmap(new Bitmap());
+        }
 
-                scope.render = function() {
-                    var bw = new BWIPJS();
+        const options = parseOptions(bw, scope.config.options);
 
-                    var mono = scope.config.rendering === "1" ? 1 : 0;
+        if (scope.config.altText !== undefined) {
+          options.alttext = bw.value(scope.config.altText);
+        }
 
-                    BWIPJS.ft_monochrome(mono);
+        bw.push(scope.config.text);
+        bw.push(options);
 
-                    if (scope.config.bgColor) {
-                        bw.bitmap(new Bitmap(scope.config.bgColor));
-                    } else {
-                        bw.bitmap(new Bitmap());
-                    }
+        bw.scale(scope.config.scale.x, scope.config.scale.y);
 
-                    var options = parseOptions(bw, scope.config.options);
+        const rotation = scope.config.rotation !== undefined ? scope.config.rotation : 'N';
 
-                    if (scope.config.altText !== undefined) {
-                        options.alttext = bw.value(scope.config.altText);
-                    }
+        bw.call(scope.config.type, function(err) {
+          if (err) {
+            scope.error.msg = parseError(err);;
+            scope.error.show = true;
+          } else {
+            scope.error.show = false;
+            scope.error.msg = null;
+            bw.bitmap().show(canvas[0], rotation);
+          }
+        });
+      };
 
-                    bw.push(scope.config.text);
-                    bw.push(options);
-
-                    bw.scale(scope.config.scale.x, scope.config.scale.y);
-
-                    var rotation = scope.config.rotation !== undefined ? scope.config.rotation : 'N';
-
-                    bw.call(scope.config.type, function(err) {
-                        if (err) {
-                            scope.error.msg = parseError(err);;
-                            scope.error.show = true;
-                        } else {
-                            scope.error.show = false;
-                            scope.error.msg = null;
-                            bw.bitmap().show(canvas[0], rotation);
-                        }
-                    });
-                };
-
-                scope.$watch('config', function(newValue){
-                    if(newValue !== null) { scope.render(); }
-                }, true);
-            }
-        };
-    }]);
-})();
+      scope.$watch('config', function(newValue){
+        if(newValue !== null) { scope.render(); }
+      }, true);
+    }
+  };
+});
