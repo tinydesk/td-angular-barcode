@@ -1,6 +1,6 @@
 {
   "name": "td-angular-barcode",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Angular 1 barcode generator",
   "main": "dist/td-barcode.js",
   "homepage": "https://github.com/tinydesk/td-angular-barcode",
