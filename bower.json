@@ -2,7 +2,7 @@
   "name": "angular-barcode",
   "authors": ["Onur Dogangönül <onur@tinydesk.at>"],
   "description": "Angular 1 barcode gernator",
-  "main": "src/barcode.js",
+  "main": "dist/td-barcode.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:tinydesk/angular-barcode.git"
