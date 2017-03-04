@@ -1,0 +1,68 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "angular": true,
+    "BWIPJS": true,
+    "Bitmap": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    //"eqeqeq": "error",
+    //"no-eq-null": "error",
+    "block-scoped-var": "error",
+    "no-alert": "error",
+    "no-global-assign": "error",
+    "no-implicit-globals": "error",
+    "no-lone-blocks": "error",
+    "no-loop-func": "error",
+    "no-multi-str": "error",
+    "no-new-func": "error",
+    "no-new": "error",
+    "no-new-wrappers": "error",
+    "no-return-assign": "error",
+    //"no-param-reassign": "error",
+    "no-self-compare": "error",
+    "no-sequences": "error",
+    "no-throw-literal": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-unused-expressions": "error",
+    "no-useless-call": "error",
+    "no-useless-concat": "error",
+    "no-useless-escape": "error",
+    "no-void": "error",
+    "no-warning-comments": "warn",
+    "no-with": "error",
+    //"radix": "error",
+    "vars-on-top": "error",
+    "yoda": "error",
+    //"init-declarations": ["error", "always"],
+    "no-catch-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "no-shadow": "error",
+    "no-undef-init": "error",
+    //"no-undefined": "error",
+    //"no-use-before-define": "warn",
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "camelcase": "error",
+    "no-continue": "error",
+    //"no-lonely-if": "error",
+    //"no-mixed-operators": "error",
+    "no-new-object": "error",
+    "no-unneeded-ternary": "error",
+    //"arrow-body-style": ["error", "as-needed"],
+    "no-useless-computed-key": "error",
+    "no-useless-constructor": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error"
+    //"prefer-template": "error"
+  }
+}

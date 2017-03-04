@@ -1,28 +1,28 @@
-# Angular Barcode
+# tdBarcode: Angular 1 barcode generator
 
-The most complete angular barcode generator out there. 
-Provides a simple wrapper directive for the awesome [bwip-js](https://github.com/metafloor/bwip-js) library.
+The most complete Angular 1 barcode generator. 
+Provides a simple wrapper directive for [bwip-js](https://github.com/metafloor/bwip-js).
 
 ## Requirements
 
 * AngularJS^1.2.x
 * bwip-js^0.14.2
 
-## Install with Bower
+## Install
+
+    $ npm install td-angular-barcode
+    
+or 
 
     $ bower install angular-barcode-gen
         
 ## Demo
 
-Check the provided [example](http://tinydesk.at/angular-barcode/example/example.html).
+Here is a [demo](http://dinony.tinydesk.at:65464/public/tdBarcode/demo/), which shows all supported barcode types.
 
-To test the example locally, simply download the bower package and start a http-server in the example directory.
-A simple http server may be installed as a node module.
-
-    $ npm install http-server -g
-    
 ## Usage
-TODO
+
+Check out the [basic](http://dinony.tinydesk.at:65464/public/tdBarcode/basic/) example, to see the basic setup.
 
 ## bwip-js
 
@@ -30,14 +30,13 @@ For more info check [bwip-js](https://github.com/metafloor/bwip-js).
     
 ## Alternatives
 
-If you have to support only a few types or just a certain type of barcode there are also alternatives.
+If you have to support only a few types or just a certain type of barcode there are also alternatives (state of 2016-02).
 
 * [angular-io-barcode](https://github.com/loicmahieu/angular-io-barcode) ~ 8 types
 * [angular-barcode](https://github.com/justechn/angular-barcode) ~ 8 types
 * [angular-barcode-generator](https://github.com/zhuk-aa/angular-barcode-generator) code128
 * [angular-qrcode](https://github.com/monospaced/angular-qrcode)
-* [angular-qr](https://github.com/janantala/angular-qr) 
-* more to find
+* [angular-qr](https://github.com/janantala/angular-qr)
     
 ## Supported Types
 

@@ -1,0 +1,13 @@
+{
+  "name": "td-barcode-basic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Basic setup you need to use td-barcode",
+  "main": "index.html",
+  "author": "Onur Dogangönül <onur@tinydesk.at>",
+  "license": "MIT",
+  "dependencies": {
+    "bwip-js": "^0.14.2",
+    "td-angular-barcode": "^2.0.0"
+  }
+}

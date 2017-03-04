@@ -1,4 +1,6 @@
-angular.module('td.barcode', []).directive('tdBarcode', () => {
+define(function(require,exports,module){
+
+return angular.module('td.barcode', []).directive('tdBarcode', () => {
   return {
     restrict: 'E',
     scope: {config : '='},
@@ -93,4 +95,6 @@ angular.module('td.barcode', []).directive('tdBarcode', () => {
       }, true);
     }
   };
+});;
+
 });

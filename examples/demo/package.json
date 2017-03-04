@@ -1,0 +1,13 @@
+{
+  "name": "td-barcode-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "More complete td-barcode demo",
+  "main": "index.html",
+  "author": "Onur Dogangönül <onur@tinydesk.at>",
+  "license": "MIT",
+  "dependencies": {
+    "bwip-js": "^0.14.2",
+    "td-angular-barcode": "^2.0.0"
+  }
+}

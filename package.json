@@ -1,0 +1,36 @@
+{
+  "name": "td-angular-barcode",
+  "version": "2.0.0",
+  "description": "Angular 1 barcode generator",
+  "main": "dist/td-barcode.js",
+  "homepage": "https://github.com/tinydesk/td-angular-barcode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tinydesk/td-angular-barcode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinydesk/td-angular-barcode/issues"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "bower-sync": "^0.1.1",
+    "browser-sync": "^2.18.8",
+    "concurrently": "^3.4.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-wrap-amd": "^0.5.0",
+    "gulp-wrap-commonjs": "^0.1.14",
+    "gulp-wrap-umd": "^0.2.1"
+  },
+  "scripts": {
+    "start": "concurrently \"gulp\" \"node browserSync.js\"",
+    "publish-lib": "gulp clean && gulp publish"
+  },
+  "keywords": ["Angular", "barcode", "generator", "qr", "aztec", "code128", "ean", "interleaved2of5"],
+  "author": "Onur Dogangönül <onur@tinydesk.at>",
+  "license": "MIT"
+}
