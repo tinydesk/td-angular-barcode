@@ -18,11 +18,11 @@ or
         
 ## Demo
 
-Here is a [demo](todo), which shows all supported barcode types.
+Here is a [demo](http://dinony.tinydesk.at:65464/public/tdBarcode/demo/), which shows all supported barcode types.
 
 ## Usage
 
-Check out the [basic](todo) example, to see the basic setup.
+Check out the [basic](http://dinony.tinydesk.at:65464/public/tdBarcode/basic/) example, to see the basic setup.
 
 ## bwip-js
 
