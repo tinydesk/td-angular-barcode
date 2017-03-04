@@ -7,9 +7,7 @@
   "author": "Onur Dogangönül <onur@tinydesk.at>",
   "license": "MIT",
   "dependencies": {
-    "bwip-js": "^0.14.2"
-  },
-  "devDependencies": {
+    "bwip-js": "^0.14.2",
     "td-angular-barcode": "^2.0.0"
   }
 }
