@@ -2,6 +2,8 @@
 
 var mod = angular.module('tdBarcode.demo', ['td.barcode']);
 
+mod.config(['$compileProvider', function ($compileProvider) {$compileProvider.debugInfoEnabled(false);}]);
+
 mod.controller('BarcodeDemoController', ['$scope', 'BarcodeTypes', function($scope, BarcodeTypes) {
   $scope.types = BarcodeTypes;
   $scope.selection = BarcodeTypes[12];

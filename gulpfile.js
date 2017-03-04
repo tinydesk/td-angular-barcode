@@ -19,7 +19,7 @@ const libMinName = 'td-barcode.min.js';
 const isProd = () => argv.production;
 
 gulp.task('default', [], () => {
-  
+  gulp.watch(srcFiles, ['transpile', 'transpileMin']);
 });
 
 gulp.task('eslint', () => {
@@ -28,7 +28,7 @@ gulp.task('eslint', () => {
     .pipe(eslint.format());
 });
 
-gulp.task('transpile', () => {
+gulp.task('transpile', ['eslint'], () => {
   return gulp.src(srcFiles)
     .pipe(rename(libName))
     .pipe(babel({presets:['es2015']}))

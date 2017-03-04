@@ -1,34 +1,17 @@
 {
   "name": "angular-barcode",
-  "authors": [
-    "onur@tinydesk.at"
-  ],
-  "description": "Most complete angular barcode generator.",
+  "authors": ["Onur Dogangönül <onur@tinydesk.at>"],
+  "description": "Angular 1 barcode gernator",
   "main": "src/barcode.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:tinydesk/angular-barcode.git"
   },
   "moduleType": [],
-  "keywords": [
-    "Angular",
-    "barcode",
-    "generator",
-    "qr",
-    "aztec",
-    "code128",
-    "ean",
-    "interleaved2of5"
-  ],
+  "keywords": ["Angular", "barcode", "generator", "qr", "aztec", "code128", "ean", "interleaved2of5"],
   "license": "MIT",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "homepage": "https://github.com/tinydesk/td-angular-barcode",
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "bwip-js": "https://github.com/metafloor/bwip-js.git#^0.14.2",
     "angular": "^1.2.18"

@@ -7,8 +7,7 @@
   <title>tdBarcode: Angular 1 barcode generator</title>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,900,900i" rel="stylesheet">
-
-  <link href="demo.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body ng-app="tdBarcode.demo">
   <h1>tdBarcode</h1>
@@ -41,7 +40,7 @@
       </div>
       <div class="form-group">
         <label>Bg Color</label>
-        <input class="form-control" type="color" value="#fff" ng-model="selection.bgColor" />
+        <input class="form-control" type="color" ng-model="selection.bgColor" />
       </div>
       <div class="form-group">
         <label>Scale X</label>
@@ -70,7 +69,7 @@
     </form>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
 
   <!-- Load fonts: Needed for bwip -->
   <script type="text/javascript">

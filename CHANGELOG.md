@@ -2,12 +2,12 @@
 
 # 2.0.0 (2017-03-04)
 
-* Fixed link to example.
 * Publish npm package.
 * Update bower package.
-* Added minimal example.
-* Added Usage in readme.
-* Added minified 
+* Fixed hosting of demos.
+* Added basic demo.
+* Updated more advanced demo.
+* Added dist folder.
 
 #### Breaking Changes
 

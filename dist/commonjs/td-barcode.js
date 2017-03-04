@@ -1,4 +1,5 @@
-angular.module('td.barcode', []).directive('tdBarcode', () => {
+require.register("/Users/dinony/work/code/angular-barcode/src/td-barcode.js", function(exports, require, module){
+  angular.module('td.barcode', []).directive('tdBarcode', () => {
   return {
     restrict: 'E',
     scope: {config : '='},
@@ -94,3 +95,6 @@ angular.module('td.barcode', []).directive('tdBarcode', () => {
     }
   };
 });
+  
+});
+
