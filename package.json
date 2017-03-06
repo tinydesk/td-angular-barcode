@@ -1,6 +1,6 @@
 {
   "name": "td-angular-barcode",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Barcode Generator for Angular 1 (Supports 90+ barcode types: qr, aztec, code128, ean, isbn, interleaved2of5, ...) ",
   "main": "dist/td-barcode.js",
   "homepage": "https://github.com/tinydesk/td-angular-barcode",
