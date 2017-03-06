@@ -1,11 +1,11 @@
 {
   "name": "td-angular-barcode",
   "authors": ["Onur Dogangönül <onur@tinydesk.at>"],
-  "description": "Angular 1 barcode gernator",
+  "description": "Barcode Generator for Angular 1 (Supports 90+ barcode types: qr, aztec, code128, ean, isbn, interleaved2of5, ...) ",
   "main": "dist/td-barcode.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tinydesk/angular-barcode.git"
+    "url": "https://github.com/tinydesk/td-angular-barcode.git"
   },
   "moduleType": [],
   "keywords": ["Angular", "barcode", "generator", "qr", "aztec", "code128", "ean", "interleaved2of5"],
