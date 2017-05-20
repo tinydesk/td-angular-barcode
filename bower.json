@@ -1,6 +1,6 @@
 {
   "name": "td-angular-barcode",
-  "authors": ["Onur Dogangönül <onur@tinydesk.at>"],
+  "authors": ["Onur Dogangönül <contact@dinony.com>"],
   "description": "Barcode Generator for Angular 1 (Supports 90+ barcode types: qr, aztec, code128, ean, isbn, interleaved2of5, ...) ",
   "main": "dist/td-barcode.js",
   "repository": {
