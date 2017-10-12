@@ -3,7 +3,7 @@
   "version": "2.0.3",
   "description": "Barcode Generator for Angular 1 (Supports 90+ barcode types: qr, aztec, code128, ean, isbn, interleaved2of5, ...) ",
   "main": "dist/td-barcode.js",
-  "homepage": "http://dinony.tinydesk.at:65464/public/tdBarcode/demo/",
+  "homepage": "http://dinony.com/projects/td-barcode/demo/",
   "repository": {
     "type": "git",
     "url": "https://github.com/tinydesk/td-angular-barcode.git"
